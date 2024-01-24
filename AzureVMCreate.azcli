@@ -1,0 +1,18 @@
+Win2022Datacenter
+az vm create --resource-group learn-743b7ff0-ac53-4b52-a5ab-021ed22e1065 --location westus --name SampleVM --image Win2022Datacenter --admin-username azureuser --generate-ssh-keys --verbose
+
+1301Amine!23456
+
+<configuration>
+   <system.webServer>
+      <security>
+         <requestFiltering>
+            <requestLimits>
+               <headerLimits>
+                  <add header="Content-type" sizeLimit="100" />
+               </headerLimits>
+            </requestLimits>
+         </requestFiltering>
+      </security>
+   </system.webServer>
+</configuration>

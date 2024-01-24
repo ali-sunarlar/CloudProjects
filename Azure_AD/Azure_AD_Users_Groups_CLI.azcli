@@ -1,0 +1,30 @@
+Az help
+az find “az ad user”
+
+az ad user list
+az ad user list --query [].displayName
+
+az ad user show --id "user@stefansammsoutlook.onmicrosoft.com"
+
+az ad user create --display-name “User Name”  --password “Password” --user-principal-name user@test.onmicrosoft.com 
+
+az ad user list –query [].displayName
+
+az ad user update --id user@test.onmicrosoft.com --account-enabled false
+
+az ad user show --id user@test.onmicrosoft.com
+(Account Enabled is the first shown property)
+
+az ad group create --display-name ProjectA_Members --mail-nickname projecta_members
+
+az ad group member add --group ProjectA_Members --member-id 530fb8df-ec8a-483d-8590-9fe76e2d079f
+
+az ad group list --query [].displayName
+
+az ad group member list --group ProjectA_Members --query [].displayName
+
+az ad group delete --group ProjectA_Members
+
+az ad group list --query [].displayName
+
+az ad user delete --id "user@test.onmicrosoft.com"
