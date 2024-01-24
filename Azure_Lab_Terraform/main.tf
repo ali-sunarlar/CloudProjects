@@ -7,10 +7,6 @@ terraform {
   }
 }
 
-provider "azurerm" {
-  # Configuration options
-}
-
 data "azurerm_resource_group" "test" {
   name     = "<resource-group-name>"
 }
