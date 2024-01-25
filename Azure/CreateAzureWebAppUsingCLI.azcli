@@ -1,0 +1,3 @@
+az appservice plan create --name whizplansa12345 --resource-group rg_eastus_82315_1_16868356355
+az webapp create --resource-group rg_eastus_82315_1_16868356355 --plan whizplansa12345 --name whizappsa12345
+

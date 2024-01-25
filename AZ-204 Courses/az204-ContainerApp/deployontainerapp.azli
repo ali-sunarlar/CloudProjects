@@ -1,0 +1,47 @@
+az extension add --name containerapp --upgrade
+
+az provider register --namespace Microsoft.App
+
+az provider register --namespace Microsoft.OperationalInsights
+
+myRG=rg_eastus_82315_1_169079533034
+myLocation=EastUS
+myAppContEnv=az204-env-$RANDOM
+
+az group create \
+    --name $myRG \
+    --location $myLocation
+
+
+    az containerapp env create \
+    --name $myAppContEnv \
+    --resource-group $myRG \
+    --location $myLocation
+
+    az containerapp create \
+    --name my-container-app \
+    --resource-group $myRG \
+    --environment $myAppContEnv \
+    --image mcr.microsoft.com/azuredocs/containerapps-helloworld:latest \
+    --target-port 80 \
+    --ingress 'external' \
+    --query properties.configuration.ingress.fqdn
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

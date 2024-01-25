@@ -1,0 +1,4 @@
+az deployment group create --resource-group labuser_82315_12791813@instructorwhizlabs.onmicrosoft.com --template-file main.bicep --parameters location=eastus
+
+
+

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "aG4zsYyYesbFLhs1tXS19VEaf/0wSS4uLxaYDX164mY9tDv3MMy3zJZAPTzG6zKfX/0Md73qB1uVAhoYZGn2YQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ali.sunarlar\\Repo\\Projects\\AZ-204 Courses\\az204-AzureCacheforRedis\\Rediscache\\Rediscache.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ali.sunarlar\\.nuget\\packages\\pipelines.sockets.unofficial\\2.2.8\\pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "C:\\Users\\ali.sunarlar\\.nuget\\packages\\stackexchange.redis\\2.6.122\\stackexchange.redis.2.6.122.nupkg.sha512",
+    "C:\\Users\\ali.sunarlar\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

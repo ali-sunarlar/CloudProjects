@@ -1,0 +1,2 @@
+az vm create --resource-group rg_eastus_82315_1_168677351176 --name myVM --image win2022datacenter --size Standard_B2s --public-ip-sku Standard --admin-username azureuser
+az vm disk attach --resource-group rg_eastus_82315_1_168677351176 --vm-name myVM --name NewDisk --size-gb 30 --sku Standard_LRS --new

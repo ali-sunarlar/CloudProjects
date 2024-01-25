@@ -1,0 +1,32 @@
+//arm template
+az deployment group create --resource-group rg_eastus_82315_1_169165291485 --template-file template.json --parameters redisCacheName=az204redissa location=eastus redisCacheSKU=Basic
+
+
+
+redisName=az204redis$RANDOM
+az redis create --location EastUS --resource-group rg_eastus_82315_1_169165195130 --name $redisName --sku Basic --vm-size c0
+
+dotnet new console -o Rediscache
+dotnet add package StackExchange.Redis
+
+dotnet build
+dotnet run
+
+
+//bicep
+az deployment group create --resource-group rg_eastus_82315_1_169167020737 --template-file main.bicep --parameters redisCacheName=sunarlaralirediscache location=eastus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

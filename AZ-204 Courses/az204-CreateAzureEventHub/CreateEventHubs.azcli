@@ -1,0 +1,19 @@
+az deployment group create --resource-group rg_eastus_82315_1_169158229061 --template-file template.json --parameters projectName=sunarlarproject location=eastus
+
+
+
+
+
+
+
+59QThECjkGBdgqK4EB+N7G0Lh99f5lgXV+AEhMPmBHc=
+
+install-script get-blobevents, send-blobevents
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+send-blobevents
+
+get-blobevents
+
+

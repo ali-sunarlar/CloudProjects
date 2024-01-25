@@ -1,0 +1,3 @@
+username="Srvadmin"
+password="Pa55w.rd1234!"
+az vm create --name MyVm --resource-group rg_eastus_82315_1_168784308758 --image win2019datacenter --size Standard_B1s --admin-username $username --admin-password $password
