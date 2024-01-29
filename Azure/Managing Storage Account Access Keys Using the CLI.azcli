@@ -1,0 +1,9 @@
+az storage account list --query [].name
+
+
+Az storage account keys list --account-name storacctyhz1 --resource-group RG1 --output table
+
+
+Az storage account keys renew -g RG1 -n storacctyhz1 --key primary
+
+Az storage account keys renew -g RG1 -n storacctyhz1 --key secondary
