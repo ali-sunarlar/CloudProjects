@@ -1,0 +1,16 @@
+az storage account list --query [].name
+
+az storage account key list --account-name storacttyhz1 --resource-group RG1 --ouput table
+
+$AZURE_STORAGE_ACCOUNT="storacttyhz1"
+$AZURE_STORAGE_ACCESS_KEY=""
+az storage share create --name fileshare1 --account-key $AZURE_STORAGE_ACCESS_KEY --account-name $AZURE_STORAGE_ACCOUNT
+
+az storage share list --account-key $AZURE_STORAGE_ACCESS_KEY --account-name $AZURE_STORAGE_ACCOUNT
+
+az storage share list --account-key $AZURE_STORAGE_ACCESS_KEY --account-name $AZURE_STORAGE_ACCOUNT --query [].name
+
+az storage share file upload --account-key $AZURE_STORAGE_ACCESS_KEY --account-name $AZURE_STORAGE_ACCOUNT --share-name fileshare1 --source ./Budget2.txt
+
+
+

@@ -1,0 +1,23 @@
+az storage account list --query [].name
+
+
+Az storage account keys list --account-name storacctyhz1 --resource-group RG1 --output table
+
+
+Az storage account keys renew -g RG1 -n storacctyhz1 --key primary
+
+Az storage account keys renew -g RG1 -n storacctyhz1 --key secondary
+
+
+az storage account list --query [].name
+az srorage account keys list --account-name stroacctthyz1 --resource-group RG1  --output table
+
+AZ_STORAGE_ACCOUNT="storaccthyz1"
+echo $AZ_STORAGE_ACCOUNT
+AZ_STORAGE_ACCESS_KEY="<key>"
+acho $AZ_STORAGE_ACCESS_KEY
+az storage container create --name westernregion --account-name $AZ_STORAGE_ACCOUNT --account-key $AZ_STORAGE_ACCESS_KEY
+az storage blob upload --container-name westernregion --name budget2.txt --file ./Budget2.TXT --account-name $AZ_STORAGE_ACCOUNT --account-key $AZ_STORAGE_ACCESS_KEY
+az storage blob list --account-key $AZ_STORAGE_ACCESS_KEY --account-name $AZ_STORAGE_ACCOUNT -container-name westernregion --query [].name
+
+
