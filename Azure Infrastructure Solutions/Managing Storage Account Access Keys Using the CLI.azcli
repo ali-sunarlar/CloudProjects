@@ -21,3 +21,15 @@ az storage blob upload --container-name westernregion --name budget2.txt --file 
 az storage blob list --account-key $AZ_STORAGE_ACCESS_KEY --account-name $AZ_STORAGE_ACCOUNT -container-name westernregion --query [].name
 
 
+#To allow traffic from all networks, use the az storage account update command and set the --default-action parameter to Allow:
+
+az storage account update --resource-group "myresourcegroup" --name "mystorageaccount" --default-action Allow
+
+#To allow traffic only from specific virtual networks, use the az storage account update command and set the --default-action parameter to Deny:
+
+az storage account update --resource-group "myresourcegroup" --name "mystorageaccount" --default-action Deny
+
+#To block traffic from all networks, use the az storage account update command and set the --public-network-access parameter to Disabled. Traffic will be allowed only through a private endpoint. You'll have to create that private endpoint.
+
+az storage account update --name MyStorageAccount --resource-group MyResourceGroup --public-network-access Disabled
+
