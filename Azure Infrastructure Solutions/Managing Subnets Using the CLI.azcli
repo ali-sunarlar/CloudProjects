@@ -1,0 +1,4 @@
+az network vnet list --query [].name
+az network vnet subnet list --resource-group RG1 --vnet-name vnet2 --query [].name
+az network vnet subnet create -g RG1 --vnet-name vnet4 -n subnet3 --address-prefixes 192.168.3.0/24 
+az network vnet subnet create -g RG1 --vnet-name vnet2 -n subnet3 --address-prefixes 192.168.3.0/24 
