@@ -1,0 +1,8 @@
+az network vnet create -g RG1 -n vnet4 --address-prefixes 192.168.0.0/16 --subnet-name subnet1 --subnet-prefixes 192.168.1.0/24
+az network vnet list --query [].name
+az network vnet list --query [].subnets[].name
+az network vnet list --query [2].subnets[].name
+az network subnet list --resource-group RG1 --vnet-name vnet4
+az network subnet list --resource-group RG1 --vnet-name vnet4 --query [].name
+az network subnet create -g RG1 --vnet-name vnet4 -n subnet2 --address-prefixes 192.168.2.0/24
+az network vnet delete -g RG1 -n vnet4
