@@ -1,0 +1,12 @@
+$Vnet1=$(az network vnet show --resource-group RG1 --name Vnet1 --query id --out tsv)
+$Vnet1
+$Vnet2=$(az network vnet show --resource-group RG1 --name Vnet2 --query id --out tsv)
+$Vnet2
+
+az network vnet peering create --name Vnet1toVnet2 --resource-group RG1 --vnet-name Vnet1 --remote-vnet-id $Vnet2 --allow-vnet-access
+az network vnet peering create --name Vnet2toVnet" --resource-group RG1 --vnet-name Vnet2 --remote-vnet-id $Vnet1 --allow-vnet-access
+
+
+
+
+
