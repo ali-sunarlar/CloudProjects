@@ -1,0 +1,13 @@
+az vm list -g RG1 --query [].name
+
+az vm list -g RG1 --query [].hardwareProfile.vmSize
+
+az vm list -g RG1 --query [].'[name,hardwareProfile.vmSize]'
+
+az vm list -g RG1 --query [].'[name,hardwareProfile.vmSize]' -o tsv
+
+az vm list-vm-resize-options -g RG1 -n WinSrv2022-3 
+
+az vm resize -g RG1 -n WinSrv2022-3 --size Standard_DS3_v2
+
+
