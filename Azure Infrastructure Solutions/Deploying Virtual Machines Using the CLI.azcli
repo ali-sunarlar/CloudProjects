@@ -1,0 +1,17 @@
+az find 'vm'
+az find 'vm ceate'
+
+az vm create --resource-group --name WinSrv2022-4 --image Win2022Datacenter --public-ip-sku Standard --admin-username adminsrv --admin-password password --location eastus
+
+az vm list --query [].name
+
+az vm show -g RG1 -n WinSrv2022-4
+
+az vm stop -n WinSrv2022-4
+
+az vm deallocate -n WinSrv2022-4 -g RG1
+
+az vm delete -n WinSrv2022-4 -g RG1
+
+
+
