@@ -1,0 +1,6 @@
+az network nsg list --query [].name
+
+az network nsg create -g RG1 -n App4_Firewall_Rules
+
+az network nsg rule create -g RG1 --nsg-name App4_Firewall_Rules -n Rule1 --priority 500 --source-address-prefixes 71.4.56.0/24 --destination-port-ranges 80 443 --destination-address-prefixes '*' --access Allow --protocol Tcp --description "Allow inbound HTTP and HTTPS traffic."
+
