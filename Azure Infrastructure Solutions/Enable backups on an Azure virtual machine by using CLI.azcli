@@ -1,0 +1,1 @@
+az backup protection enable-for-vm --resource-group AZ300-RGlod37856182 --vault-name AZ300-RecoveryServicesVault-37856182 --vm VM3 --policy-name DefaultPolicy
