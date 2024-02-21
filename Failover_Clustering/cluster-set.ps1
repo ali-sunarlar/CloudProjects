@@ -14,7 +14,7 @@ Add-ClusterSetMember -ClusterName CLUSTER2 -CimSession CSMASTER -InfraSOFSName S
 Get-ClusterSet -CimSession CSMASTER | Get-Cluster | Get-ClusterNode
 
 # Add management cluster to the local Administrators group on each cluster member server node in the cluster set
-foreach ($h in $hosts) { Invoke-Command -ComputerName $h -ScriptBlock { Net localgroup administrators /add <management_cluster_name>$ } }
+foreach ($h in $hosts) { Invoke-Command -ComputerName $h -ScriptBlock { Net localgroup administrators /add clustername $ } }
 
 # Identify the optimal node to create a new virtual machine
 $memoryinMB = 4096
@@ -28,7 +28,7 @@ Invoke-Command -ComputerName $targetnode.name -scriptblock { param([String]$stor
 
 Start-VM CSVM1 -ComputerName $targetnode.name | Out-Null
 
-Get-VM CSVM1 -ComputerName $targetnode.name | fl State, ComputerName
+Get-VM CSVM1 -ComputerName $targetnode.name | Select-Object State, ComputerName
 
 Register-ClusterSetVM -CimSession CSMASTER -MemberName $targetnode.Member -VMName CSVM1
 

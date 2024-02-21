@@ -35,3 +35,15 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 Get-PhysicalDisk | Select-Object -Property FriendlyName, ClassName, CanPool, CannotPoolReason | Format-Table -AutoSize
 
 Get-PhysicalDisk | Format-List *
+
+Start-Process
+
+#old school
+#cluster /prop
+#cluster /quorum
+
+#New School
+get-cluster -name "democluster1" |Format-List -Property *
+Get-ClusterQuorum -Cluster "democluster1"
+
+
