@@ -1,3 +1,5 @@
+Set-StrictMode -Version 2
+
 ####################
 #
 # Adjust for Best Performance setting (in Performance > Visual Effects)
