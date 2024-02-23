@@ -3,11 +3,11 @@
 # Install the role
 # Fill in these variables with your values
 #$ServerList = "server2.contoso.com", "server3.contoso.com"
-$ServerList="DEMOCLS1.demo.local", "DEMOCLS2.demo.local"
+$ServerList="DEMOCLS-1.demo.local", "DEMOCLS-2.demo.local"
 #$FeatureList = "Hyper-V", "Failover-Clustering", "Data-Center-Bridging", "RSAT-Clustering-PowerShell", "Hyper-V-PowerShell", "FS-FileServer"
-$FeatureList = "Failover-Clustering","RSAT-Clustering-PowerShell", "FS-FileServer"
+$FeatureList = "Failover-Clustering","FS-FileServer","RSAT-Clustering-PowerShell"
 Invoke-Command ($ServerList) {
-  Install-WindowsFeature -Name $Using:Featurelist -Restart
+  Install-WindowsFeature -Name $Using:Featurelist -Restart -IncludeManagementTools
 }
 
 # Validate the cluster
