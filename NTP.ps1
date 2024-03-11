@@ -19,3 +19,6 @@ net stop w32time && net start w32time
 #To synchronize the time immediately run the command:
 w32tm /resync
 
+
+w32tm /query /peers
+
