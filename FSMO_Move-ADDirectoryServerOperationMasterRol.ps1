@@ -14,7 +14,7 @@ Get-ADObject -Identity "CN=SYSVOL Subscription,CN=Domain System Volume,CN=DFSR-L
  Set-ADObject -Replace @{'msDFSR-Enabled'=$false}
 
 
-Get-ADDomainController -Server $env:COMPUTERNAME -Filter * | % { Update-DfsrConfigurationFromAD -ComputerName $_.name -Verbose }
+Get-ADDomainController -Server $env:COMPUTERNAME -Filter * | ForEach-Object { Update-DfsrConfigurationFromAD -ComputerName $_.name -Verbose }
 
 Dfsrmig /getmigrationstate
 
@@ -31,7 +31,7 @@ Dfsrmig /getmigrationstate
 
 Dcdiag /e /test:sysvolcheck /test:advertising
 
-Get-ADDomainController -Server $env:COMPUTERNAME -Filter * | % { Update-DfsrConfigurationFromAD -ComputerName $_.name -Verbose }
+Get-ADDomainController -Server $env:COMPUTERNAME -Filter * | ForEach-Object { Update-DfsrConfigurationFromAD -ComputerName $_.name -Verbose }
 
 Repadmin /syncall /force /APed
 
@@ -63,7 +63,7 @@ dfsrmig /CreateGlobalObjects
 
 repadmin /syncall /force /APed
 
-Get-ADDomainController -Server JVSRVZEUS -Filter * | %{Update-DfsrConfigurationFromAD -ComputerName $_.name -Verbose}
+Get-ADDomainController -Server JVSRVZEUS -Filter * | ForEach-Object {Update-DfsrConfigurationFromAD -ComputerName $_.name -Verbose}
 
 dfsrmig /setglobalstate 0
 
