@@ -14,11 +14,17 @@ w32tm.exe /config /manualpeerlist:"0.pool.ntp.org,0x8 1.pool.ntp.org,0x8 2.pool.
 w32tm /config /reliable:yes
 
 #Now you need to restart the W32Time service on the PDC:
-net stop w32time && net start w32time
+net stop w32time
+
+net start w32time
 
 #To synchronize the time immediately run the command:
 w32tm /resync
 
 
 w32tm /query /peers
+
+w32tm.exe /config /manualpeerlist:"10.92.8.40,0x8" /syncfromflags:manual /update
+
+
 
